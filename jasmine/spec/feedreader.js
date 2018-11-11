@@ -97,8 +97,8 @@ $(function() {
          });
 
          it('load in the feed', function() {
-             const entry = document.querySelector('.entry-link');
-             expect(entry).not.toBeNull();
+             feed = document.querySelectorAll('.feed .entry');
+             expect(feed.length).toBeGreaterThan(0);
          });
 
     });
