@@ -60,8 +60,8 @@ $(function() {
          * Tests if the menu-hidden class is present or not
          */
          it('is hidden by default', function() {
-             const menu = document.querySelector('.menu-hidden');
-             expect(menu).not.toBeNull();
+             list = document.querySelector('body').classList;
+             expect(list.contains('menu-hidden')).toBe(true);
          });
 
          /* Test that ensures the menu changes
@@ -73,9 +73,11 @@ $(function() {
           it('changes when clicked', function() {
               const menuIcon = document.querySelector('.menu-icon-link');
               menuIcon.click();
-              const menu = document.querySelector('.menu-hidden');
-              expect(menu).toBeNull();
+              list = document.querySelector('body').classList;
+              expect(list.contains('menu-hidden')).toBe(false);
               menuIcon.click();
+              list = document.querySelector('body').classList;
+              expect(list.contains('menu-hidden')).toBe(true);
           });
 
     });
